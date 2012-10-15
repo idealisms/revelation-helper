@@ -1,0 +1,23 @@
+{
+  "name": "Revelation Reader",
+  "version": "0.1",
+  "manifest_version": 2,
+  "description": "Decodes revelation files.",
+  "icons": {
+    "16": "revelation16.png",
+    "48": "revelation48.png"
+  },
+  "browser_action": {
+    "default_icon": "revelation32.png",
+    "default_popup": "popup.html"
+  },
+  "permissions": [
+    "https://dl-web.dropbox.com/get/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://www.dropbox.com/home*"],
+      "js": ["content_script.js"]
+    }
+  ]
+}
