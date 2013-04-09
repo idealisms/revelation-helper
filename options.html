@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.flexbox {
+  display: -webkit-flex;
+  -webkit-align-items: baseline;
+}
+</style>
+<script src="options.js"></script>
+</head>
+<body>
+<h3>Where is your revelation file?</h3>
+<table style="width: 500px">
+<tr><td>
+  <input type="radio" id="dropbox" name="source-type" checked="yes">
+</td><td>
+  <label for="dropbox">
+  <div class="flexbox">
+    <div style="margin-right: 6px">Dropbox:</div>
+    <input id="sourceDropbox" style="-webkit-flex: 1" class="dropbox" type="text" placeholder="filename" value="pwd">
+  </div>
+  </label>
+</td></tr>
+<tr style="font-size: 80%;"><td>
+</td><td style="padding-bottom: 12px;">
+  To load, navigate to the folder containing the file on dropbox.com, open
+  the popup <img src="revelation32.png" width="13">, and click the load button.
+</td></tr>
+<tr><td>
+  <input type="radio" id="url" name="source-type">
+</td><td>
+  <label for="url">
+  <div class="flexbox">
+    <div style="margin-right: 6px">URL:</div>
+    <input id="sourceURL" style="-webkit-flex: 1" class="url" disabled type="text" placeholder="URL" value="revelation-test">
+    <input id="load" class="url" type="button" value="load" disabled>
+  </div>
+  </label>
+</td></tr>
+<tr style="font-size: 80%;"><td>
+</td><td style="padding-bottom: 12px;">
+  Enter a full URL here. You can also try loading a test file by entering
+  "revelation-test". The password for revelation-test is abc123.
+</td></tr>
+</table>
+</body>
+</html>

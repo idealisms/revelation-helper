@@ -7,12 +7,15 @@
     "16": "revelation16.png",
     "48": "revelation48.png"
   },
+  "options_page": "options.html",
   "browser_action": {
     "default_icon": "revelation32.png",
     "default_popup": "popup.html"
   },
   "permissions": [
-    "https://dl-web.dropbox.com/get/*",
+    "http://*/",
+    "https://*/",
+    "file://*",
     "tabs"
   ],
   "content_scripts": [

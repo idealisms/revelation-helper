@@ -32,7 +32,7 @@ embed {
 <form id="form">
 <div style="width: 200px; display: -webkit-flex; -webkit-flex-direction: column;">
   <div style="display: -webkit-flex">
-    <input id="password" type="password" style="-webkit-flex: 1" tabindex=1>
+    <input id="password" type="password" placeholder="password" style="-webkit-flex: 1" tabindex=1>
     <input id="decrypt" type="submit" value="show" tabindex=3>
   </div>
 
@@ -42,25 +42,24 @@ embed {
 
   <div class="results">
     <div style="display: -webkit-flex">
-      <input id="name" style="-webkit-flex: 1" readonly>
+      <input id="name" placeholder="name" style="-webkit-flex: 1" readonly>
     </div>
 
     <div style="display: -webkit-flex">
-      <input id="description" style="-webkit-flex: 1" readonly>
+      <input id="description" placeholder="description" style="-webkit-flex: 1" readonly>
     </div>
 
     <div style="display: -webkit-flex">
-      <input id="username" style="min-width: 0" readonly>
-      <input id="site-password" style="min-width: 0" readonly>
+      <input id="username" placeholder="username" style="min-width: 0" readonly>
+      <input id="site-password" placeholder="password" style="min-width: 0" readonly>
     </div>
   </div>
 
-  <div style="display: -webkit-flex; margin-top: 14px">
-    <input id="load-test" style="-webkit-flex: 1" type="button" value="load test file">
-    <input id="load-real" style="-webkit-flex: 1" type="button" value="load real file">
+  <div id="load-real-container" style="display: -webkit-flex; margin-top: 14px">
+    <input id="load-real" style="-webkit-flex: 1" type="button" value="load">
   </div>
 
-  <div id="status-field">NO-STATUS</div>
+  <div id="status-field" style="margin-top: 6px">NO-STATUS</div>
 </div>
 </form>
 

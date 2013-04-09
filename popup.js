@@ -93,11 +93,11 @@ function pageDidLoad() {
   var formElement = document.getElementById("form");
   formElement.addEventListener('submit', decrypt, true);
 
-  var loadTestButton = document.getElementById('load-test');
-  loadTestButton.addEventListener('click', loadTestFile, true);
-
   var loadRealButton = document.getElementById('load-real');
   loadRealButton.addEventListener('click', loadRealFile, true);
+  var sourceType = localStorage.sourceType || "dropbox";
+  if (sourceType == "url")
+    document.getElementById("load-real-container").style.display = "none";
 
   var embed = document.createElement("embed");
   embed.setAttribute("name", "nacl_module");
@@ -144,20 +144,12 @@ function decrypt(event) {
       str2ab(window.localStorage.revelationData));
 }
 
-function loadTestFile() {
-  var xhr = new XMLHttpRequest();
-  xhr.onload = fileLoaded;
-  xhr.open("GET", "./revelation-test", true);
-  xhr.responseType = 'arraybuffer';
-  xhr.send();
-  document.getElementById("password").value = "abc123";
-}
-
 function loadRealFile() {
-  updateStatus("loading real file");
+  var sourceFile = localStorage.sourceFile || "pwd";
+  updateStatus("loading '" + sourceFile + "' from dropbox");
 
   chrome.tabs.getSelected(null, function(tab) {
-    chrome.tabs.sendMessage(tab.id, {filename: "pwd"}, function(response) {
+    chrome.tabs.sendMessage(tab.id, {filename: sourceFile}, function(response) {
       window.localStorage.revelationData = response.revelationData;
       updateStatus("saved real file");
     });
