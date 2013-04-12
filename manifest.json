@@ -1,6 +1,6 @@
 {
   "name": "Revelation Reader",
-  "version": "0.2",
+  "version": "0.2.1",
   "manifest_version": 2,
   "description": "Decodes revelation files.",
   "icons": {
@@ -13,8 +13,7 @@
     "default_popup": "popup.html"
   },
   "permissions": [
-    "http://*/",
-    "https://*/",
+    "<all_urls>",
     "tabs"
   ],
   "content_scripts": [
